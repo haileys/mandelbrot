@@ -2,3 +2,4 @@ mandelbrot.bundle
 mandelbrot.o
 Makefile
 *.gem
+*.sh
