@@ -1,6 +1,6 @@
 # mandelbrot
 
-A Ruby C extension for rendering mandelbrots.
+A Ruby C extension for rendering the Mandelbrot set.
 
 ## Installation
 
