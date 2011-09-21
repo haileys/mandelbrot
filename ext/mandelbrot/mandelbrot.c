@@ -157,6 +157,7 @@ static VALUE Mandelbrot_bmp(VALUE self, VALUE _width, VALUE _height)
     int x, y, iter;
     int offset;
     int* grid;
+    size_t tmpsz;
     VALUE ary, col, tmp;
     VALUE r_min;
     VALUE r_max;
@@ -174,7 +175,6 @@ static VALUE Mandelbrot_bmp(VALUE self, VALUE _width, VALUE _height)
     max_im = rb_complex_im(r_max);
     
     max_iters = NUM2INT(rb_iv_get(self, "@max_iters"));
-    
     
     bmp = malloc(54 + (((24 * width + 31)/32) * 4) * height);
     new_bmp_header(width, height, bmp);
@@ -207,5 +207,7 @@ static VALUE Mandelbrot_bmp(VALUE self, VALUE _width, VALUE _height)
         }
     }
     
-    return rb_str_new(bmp, 54 + (((24 * width + 31)/32) * 4) * height);
+    tmp = rb_str_new(bmp, 54 + (((24 * width + 31)/32) * 4) * height);
+    free(bmp);
+    return tmp;
 }
