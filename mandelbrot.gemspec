@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "mandelbrot"
-  s.version     = "0.1"
+  s.version     = "0.1.2"
   s.date        = "2011-09-20"
   s.summary     = "A Ruby C extension for rendering Mandelbrot fractals"
   s.authors     = ["Charlie Somerville"]
