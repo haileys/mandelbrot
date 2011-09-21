@@ -2,18 +2,23 @@
 
 A Ruby C extension for rendering mandelbrots.
 
-## Compilation
+## Installation
 
-    ruby extconf.rb
-    make
-
-(yeah yeah, I'll make this into a proper gem later...)
+    gem install mandelbrot
 
 ## It's super easy to use...
 
     require './mandelbrot'
     m = Mandelbrot.new Complex(-2, -1), Complex(1, 1)
     grid = m.render 1680, 1050
+    
+You can also set the max number of iterations:
+
+    m.max_iters = 1024
+    
+And render a Bitmap Image:
+
+    m.bmp 1680, 1050
 
 ## Example
 
